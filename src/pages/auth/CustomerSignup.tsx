@@ -5,6 +5,7 @@ import { Alert, Button, Field, Input } from '../../components/ui';
 import { PhoneInput } from '../../components/PhoneInput';
 import { useAuth } from '../../context/AuthContext';
 import { BackButton } from './Signup';
+import type { AuthResponse } from '../../types';
 
 export default function CustomerSignup({ onBack }: { onBack: () => void }) {
   const { registerCustomer } = useAuth();
@@ -19,8 +20,21 @@ export default function CustomerSignup({ onBack }: { onBack: () => void }) {
     setError('');
     setLoading(true);
     try {
-      await registerCustomer(form);
-      navigate('/home');
+      const data: AuthResponse = await registerCustomer(form);
+      if (data.requiresOtp) {
+        navigate('/login', {
+          state: {
+            otpChallenge: {
+              phone: data.phone ?? form.phone,
+              otpChannel: data.otpChannel ?? 'sms',
+              devOtp: data.devOtp,
+              expiresIn: data.expiresIn,
+            },
+          },
+        });
+      } else {
+        navigate('/home');
+      }
     } catch (err) {
       setError((err as Error).message);
     } finally {

@@ -94,6 +94,8 @@ export const en = {
     generic: 'Something went wrong. Please try again.',
     validation: 'Please check the entered information.',
     unauthorized: 'Your session expired — please log in again.',
+    invalidCredentials: 'Invalid phone number or password.',
+    phoneAlreadyRegistered: 'This phone number is already registered — please log in instead.',
     forbidden: 'You do not have permission for this action.',
     notFound: 'The requested item was not found.',
     conflict: 'The item has changed — please refresh and try again.',

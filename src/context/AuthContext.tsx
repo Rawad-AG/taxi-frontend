@@ -9,7 +9,7 @@ interface AuthContextValue {
   loading: boolean;
   login: (phone: string, password: string) => Promise<AuthResponse>;
   verifyOtp: (phone: string, code: string) => Promise<void>;
-  registerCustomer: (input: { firstName: string; lastName: string; phone: string; password: string }) => Promise<void>;
+  registerCustomer: (input: { firstName: string; lastName: string; phone: string; password: string }) => Promise<AuthResponse>;
   registerDriver: (input: Parameters<typeof authApi.registerDriver>[0]) => Promise<User | null>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
@@ -90,13 +90,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const registerCustomer = useCallback(
     async (input: { firstName: string; lastName: string; phone: string; password: string }) => {
       try {
-        const data = await authApi.registerCustomer(input);
-        applyAuth({ user: data.user!, accessToken: data.accessToken! });
+        return await authApi.registerCustomer(input);
       } catch (err) {
         throw new Error(getErrorMessage(err));
       }
     },
-    [applyAuth],
+    [],
   );
 
   const registerDriver = useCallback(

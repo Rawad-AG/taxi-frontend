@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Alert, Button, Field, Input } from '../../components/ui';
 import { PhoneInput } from '../../components/PhoneInput';
@@ -9,7 +9,7 @@ import type { AuthResponse } from '../../types';
 
 interface OtpChallenge {
   phone: string;
-  password: string;
+  password?: string;
   otpChannel: 'sms' | 'whatsapp';
   devOtp?: string;
   expiresIn?: number;
@@ -18,12 +18,14 @@ interface OtpChallenge {
 export default function Login() {
   const { login, verifyOtp } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
+  const incomingChallenge = (location.state as { otpChallenge?: OtpChallenge } | null)?.otpChallenge;
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [challenge, setChallenge] = useState<OtpChallenge | null>(null);
+  const [challenge, setChallenge] = useState<OtpChallenge | null>(incomingChallenge ?? null);
   const [code, setCode] = useState('');
 
   const onCredentialsSubmit = async (e: FormEvent) => {

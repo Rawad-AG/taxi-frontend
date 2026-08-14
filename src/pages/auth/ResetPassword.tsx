@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Alert, Button, Field, Input } from '../../components/ui';
 import { PhoneInput } from '../../components/PhoneInput';
@@ -8,8 +8,10 @@ import { AuthShell } from '../../components/AuthShell';
 
 export default function ResetPassword() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
-  const [phone, setPhone] = useState('');
+  const incomingPhone = (location.state as { phone?: string } | null)?.phone ?? '';
+  const [phone, setPhone] = useState(incomingPhone);
   const [code, setCode] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [error, setError] = useState('');

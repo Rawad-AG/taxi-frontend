@@ -26,6 +26,9 @@ api.interceptors.request.use((config) => {
 
 const CODE_KEYS: Record<string, string> = {
   UNAUTHORIZED: 'err.unauthorized',
+  INVALID_CREDENTIALS: 'err.invalidCredentials',
+  INVALID_OTP: 'err.otpInvalid',
+  PHONE_ALREADY_REGISTERED: 'err.phoneAlreadyRegistered',
   VALIDATION_ERROR: 'err.validation',
   FORBIDDEN: 'err.forbidden',
   NOT_FOUND: 'err.notFound',

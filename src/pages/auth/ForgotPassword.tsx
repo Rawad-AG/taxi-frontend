@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Alert, Button, Field } from '../../components/ui';
 import { PhoneInput } from '../../components/PhoneInput';
@@ -7,9 +7,9 @@ import { authApi } from '../../lib/auth';
 import { AuthShell } from '../../components/AuthShell';
 
 export default function ForgotPassword() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ export default function ForgotPassword() {
     setLoading(true);
     try {
       await authApi.forgotPassword(phone);
-      setMessage(t('auth.forgot.sent'));
+      navigate('/reset-password', { state: { phone } });
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -30,7 +30,6 @@ export default function ForgotPassword() {
   return (
     <AuthShell title={t('auth.forgot.title')} subtitle={t('auth.forgot.subtitle')}>
       <form onSubmit={onSubmit} className="space-y-4">
-        {message && <Alert tone="success">{message}</Alert>}
         {error && <Alert tone="error">{error}</Alert>}
         <Field label={t('auth.forgot.phone')}>
           <PhoneInput value={phone} onChange={setPhone} />

@@ -20,8 +20,11 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(function
 
   const handleChange = useCallback(
     (raw: string) => {
-      const clean = raw.replace(/\D/g, '').replace(/^9/, '').slice(0, 8);
-      onChange(`${COUNTRY}${PREFIX}${clean}`);
+      let d = raw.replace(/\D/g, '');
+      if (d.startsWith('963')) d = d.slice(3);
+      if (d.startsWith('0')) d = d.slice(1);
+      if (d.length === 9 && d.startsWith('9')) d = d.slice(1);
+      onChange(`${COUNTRY}${PREFIX}${d.slice(0, 8)}`);
     },
     [onChange],
   );
