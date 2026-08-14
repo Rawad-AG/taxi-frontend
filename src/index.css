@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eef9ff;
+  --color-brand-100: #d9f0ff;
+  --color-brand-200: #bce6ff;
+  --color-brand-300: #8ed8ff;
+  --color-brand-400: #59c0ff;
+  --color-brand-500: #339eff;
+  --color-brand-600: #1b7df5;
+  --color-brand-700: #1464e1;
+  --color-brand-800: #1751b6;
+  --color-brand-900: #19478f;
+  --color-brand-950: #152d57;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+.map-pin {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px 9999px 9999px 0;
+  transform: rotate(-45deg);
+  border: 2.5px solid white;
+  box-shadow: 0 2px 6px rgb(15 23 42 / 0.35);
+}
+
+.map-pin-green {
+  background: #10b981;
+}
+
+.map-pin-red {
+  background: #ef4444;
+}
+
+.map-pin-blue {
+  background: #1b7df5;
+}
+
+.map-pin-grey {
+  background: #94a3b8;
+}
+
+.map-pin-violet {
+  background: #7c3aed;
+}

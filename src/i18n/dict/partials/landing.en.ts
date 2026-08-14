@@ -1,0 +1,133 @@
+export const landingEn = {
+  landing: {
+    stats: {
+      citiesTitle: 'Cities served',
+      citiesDesc: 'Growing coverage across Syria',
+      ridesTitle: 'Rides completed',
+      ridesDesc: 'From daily commutes to airport trips',
+      driversTitle: 'Verified drivers',
+      driversDesc: 'Screened, licensed and reviewed',
+      responseTitle: 'Avg. pickup',
+      responseDesc: 'Fast matching around the clock',
+    },
+    about: {
+      title: 'About TaxiGo',
+      p1: 'TaxiGo is a ride-hailing platform built for Syrian cities — connecting passengers with verified, licensed drivers through a simple app and a live map. We started with one goal: make getting around predictable, transparent and safe, with prices you see before you book.',
+      p2: 'Every driver on TaxiGo is verified against their national ID, driving licence and vehicle registration before their first ride. Fares are calculated from distance and category — no meter games, no surprise charges. When you book, the total is fixed and shown upfront.',
+      valuesTitle: 'What we stand for',
+    },
+    values: {
+      fair: {
+        title: 'Fair, upfront fares',
+        desc: 'The price is set when you book — distance-based, rounded and honest.',
+      },
+      safe: {
+        title: 'Safety first',
+        desc: 'Verified drivers, live tracking and a one-tap SOS on every trip.',
+      },
+      local: {
+        title: 'Built for Syria',
+        desc: 'Local support, Syrian numbers, cash-friendly payments and Arabic-first design.',
+      },
+      transparent: {
+        title: 'Transparent records',
+        desc: 'Full ride history, itemised fares and receipts for every single trip.',
+      },
+    },
+    howTitle: 'How TaxiGo works',
+    howSubtitle: 'From booking to drop-off in four simple steps.',
+    step1Bullet1: 'Tap the map or use your current location',
+    step1Bullet2: 'Choose a category — economy, comfort, luxury or van',
+    step2Bullet1: 'Nearby drivers see your request and respond in seconds',
+    step2Bullet2: 'Your driver is shown with name, car and rating',
+    step3Bullet1: 'Follow the trip live on the map',
+    step3Bullet2: 'Share your trip with family for extra peace of mind',
+    step4Bullet1: 'Pay cash, from your bucket balance or with pay-later credit',
+    step4Bullet2: 'Rate the driver and keep your receipt',
+    howRiderTitle: 'For riders',
+    howRider1: 'No phone calls — book entirely from the app',
+    howRider2: 'Fixed fare before you confirm the ride',
+    howRider3: 'Cancel anytime before the driver arrives',
+    howRider4: 'SOS button available on every trip',
+    howDriverTitle: 'For drivers',
+    howDriver1: 'Go online in your area and get matched automatically',
+    howDriver2: 'See pickup, drop-off and fare before accepting',
+    howDriver3: 'Earn per trip with transparent commission',
+    howDriver4: 'Weekly earnings view and ride history',
+    safety: {
+      title: 'Safety & trust',
+      subtitle: 'We built safety into every part of the journey — before, during and after the ride.',
+      sos: {
+        title: 'One-tap SOS',
+        desc: 'A dedicated emergency button that alerts support with your live location and trip details.',
+      },
+      track: {
+        title: 'Live trip tracking',
+        desc: 'Watch your ride approach in real time and follow every minute of the journey.',
+      },
+      verify: {
+        title: 'Verified drivers',
+        desc: 'ID, licence and vehicle checks before approval — plus ratings on every trip.',
+      },
+      record: {
+        title: 'Complete records',
+        desc: 'Every ride is logged: driver, route, fare and time. Anything wrong, we can trace it.',
+      },
+    },
+    pay: {
+      title: 'Pay your way',
+      subtitle: 'Three payment methods, one simple rule: the price you see is the price you pay.',
+      cash: {
+        title: 'Cash',
+        desc: 'Pay the driver directly at the end of the trip — no card needed.',
+      },
+      bucket: {
+        title: 'Bucket wallet',
+        desc: 'Top up a prepaid balance and pay for rides in seconds, with easy balances tracking.',
+      },
+      later: {
+        title: 'Pay-later credit',
+        desc: 'Eligible customers can ride now and settle within a week, with clear due dates.',
+      },
+      transparent: 'Fares are calculated per kilometre with a fixed base — fully itemised in the app.',
+    },
+    perks: {
+      title: 'Drive with TaxiGo',
+      subtitle: 'Flexible, transparent and supported — the platform works for your schedule.',
+      earn: {
+        title: 'Keep more of every trip',
+        desc: 'Clear, fixed commission with a full earnings breakdown on every ride.',
+      },
+      time: {
+        title: 'Your hours, your city',
+        desc: 'Go online whenever you want and receive requests only from areas you choose.',
+      },
+      support: {
+        title: 'Real support',
+        desc: 'A dedicated team for drivers — approvals, documents and issues handled fast.',
+      },
+      payout: {
+        title: 'Transparent payouts',
+        desc: 'Track your balance, trips and payouts in one place at any time.',
+      },
+    },
+    faq: {
+      title: 'Frequently asked questions',
+      subtitle: 'Quick answers about booking, payments and safety.',
+      q1: 'How do I book a ride?',
+      a1: 'Create a free account, set your pickup and destination on the map, choose a car category and confirm. The fare is shown before you book.',
+      q2: 'How are fares calculated?',
+      a2: 'Fares combine a fixed base with a per-kilometre rate for your chosen category. The final price is fixed at booking — it will not change during the trip.',
+      q3: 'Which payment methods are available?',
+      a3: 'Cash, prepaid bucket balance, and pay-later credit for eligible customers. You can pick the method when booking each ride.',
+      q4: 'What should I do in an emergency during a trip?',
+      a4: 'Use the SOS button in the app — it sends your live location and trip details to our support team immediately. It is available on every ride.',
+      q5: 'How do I become a driver?',
+      a5: 'Register as a driver, upload your national ID, driving licence and vehicle documents, and get verified. Most applications are processed within 24 hours.',
+    },
+    ctaTitle: 'Ready for your first ride?',
+    ctaDesc: 'Join TaxiGo today — book in seconds, pay your way, and ride with verified drivers.',
+    ctaBookNow: 'Book your first ride',
+    ctaDriverJoin: 'Become a driver',
+  },
+};
