@@ -164,7 +164,7 @@ export default function Landing() {
                   <div>
                     <div className="flex items-center gap-2">
                       <Car className="h-5 w-5 text-brand-600" />
-                      <span className="font-bold">TaxiGo</span>
+                      <span className="font-bold">DRMTaxi</span>
                     </div>
                     <div className="mt-6 space-y-4 text-sm">
                       <div className="flex items-center gap-3">

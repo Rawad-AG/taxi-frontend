@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { en, ar, type Lang } from './dict';
 
-export const STORAGE_KEY = 'taxigo.lang';
+export const STORAGE_KEY = 'drmtaxi.lang';
 
 export function getInitialLang(): Lang {
   try {

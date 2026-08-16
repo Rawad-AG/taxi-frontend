@@ -183,7 +183,7 @@ export default {
     },
     servicesTitle: 'One app, all your rides',
     servicesDesc:
-      'Whatever you need to move — a person, a parcel, or both — TaxiGo connects you with the right driver.',
+      'Whatever you need to move — a person, a parcel, or both — DRMTaxi connects you with the right driver.',
     step1Title: 'Tell us where',
     step1Desc: 'Enter pickup and drop-off points or pick from saved places.',
     step2Title: 'We match you',
@@ -192,7 +192,7 @@ export default {
     step3Desc: 'Follow your driver live from arrival to drop-off.',
     step4Title: 'Pay your way',
     step4Desc: 'Cash or card — you decide before you ride.',
-    driveTitle: 'Drive with TaxiGo',
+    driveTitle: 'Drive with DRMTaxi',
     driveDesc:
       'Register your car, set your working areas and start earning. Keep 100% of your fare — no hidden fees.',
     online24h: 'Online in 24h',
@@ -201,7 +201,7 @@ export default {
   static: {
     howItWorks: {
       title: 'How it works',
-      text: 'TaxiGo is designed to get you from A to B with as little friction as possible. Here is how a typical ride goes.\n\n1. Set your trip — Open the app, allow your location, and pick your destination on the map. You can also type an address or choose a saved place. Choose the car category that suits you: economy, comfort, luxury or van.\n\n2. Get a fixed fare — Before you confirm anything, the app shows the total fare: a fixed base plus a per-kilometre rate for the category you selected. The price you see is the price you pay — it never changes mid-trip.\n\n3. Get matched — Your request goes to nearby online drivers. The first driver to accept appears with their name, car and rating. Until the driver arrives you can follow their approach on the live map, and you are free to cancel before pickup.\n\n4. Ride and track — Follow the trip in real time, share your location with family, and pay in cash, from your bucket balance, or with pay-later credit if you are eligible. An SOS button is available on every ride.\n\n5. Rate and review — After the trip you can rate your driver and keep the full receipt in your ride history.\n\nDrivers follow a mirrored flow: go online in their chosen area, receive requests with the trip details and fare upfront, accept, complete the trip, and earn with transparent commission.',
+      text: 'DRMTaxi is designed to get you from A to B with as little friction as possible. Here is how a typical ride goes.\n\n1. Set your trip — Open the app, allow your location, and pick your destination on the map. You can also type an address or choose a saved place. Choose the car category that suits you: economy, comfort, luxury or van.\n\n2. Get a fixed fare — Before you confirm anything, the app shows the total fare: a fixed base plus a per-kilometre rate for the category you selected. The price you see is the price you pay — it never changes mid-trip.\n\n3. Get matched — Your request goes to nearby online drivers. The first driver to accept appears with their name, car and rating. Until the driver arrives you can follow their approach on the live map, and you are free to cancel before pickup.\n\n4. Ride and track — Follow the trip in real time, share your location with family, and pay in cash, from your bucket balance, or with pay-later credit if you are eligible. An SOS button is available on every ride.\n\n5. Rate and review — After the trip you can rate your driver and keep the full receipt in your ride history.\n\nDrivers follow a mirrored flow: go online in their chosen area, receive requests with the trip details and fare upfront, accept, complete the trip, and earn with transparent commission.',
     },
     support: {
       title: 'Support',

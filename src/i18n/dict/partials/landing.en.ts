@@ -11,9 +11,9 @@ export const landingEn = {
       responseDesc: 'Fast matching around the clock',
     },
     about: {
-      title: 'About TaxiGo',
-      p1: 'TaxiGo is a ride-hailing platform built for Syrian cities — connecting passengers with verified, licensed drivers through a simple app and a live map. We started with one goal: make getting around predictable, transparent and safe, with prices you see before you book.',
-      p2: 'Every driver on TaxiGo is verified against their national ID, driving licence and vehicle registration before their first ride. Fares are calculated from distance and category — no meter games, no surprise charges. When you book, the total is fixed and shown upfront.',
+      title: 'About DRMTaxi',
+      p1: 'DRMTaxi is a ride-hailing platform built for Syrian cities — connecting passengers with verified, licensed drivers through a simple app and a live map. We started with one goal: make getting around predictable, transparent and safe, with prices you see before you book.',
+      p2: 'Every driver on DRMTaxi is verified against their national ID, driving licence and vehicle registration before their first ride. Fares are calculated from distance and category — no meter games, no surprise charges. When you book, the total is fixed and shown upfront.',
       valuesTitle: 'What we stand for',
     },
     values: {
@@ -34,7 +34,7 @@ export const landingEn = {
         desc: 'Full ride history, itemised fares and receipts for every single trip.',
       },
     },
-    howTitle: 'How TaxiGo works',
+    howTitle: 'How DRMTaxi works',
     howSubtitle: 'From booking to drop-off in four simple steps.',
     step1Bullet1: 'Tap the map or use your current location',
     step1Bullet2: 'Choose a category — economy, comfort, luxury or van',
@@ -92,7 +92,7 @@ export const landingEn = {
       transparent: 'Fares are calculated per kilometre with a fixed base — fully itemised in the app.',
     },
     perks: {
-      title: 'Drive with TaxiGo',
+      title: 'Drive with DRMTaxi',
       subtitle: 'Flexible, transparent and supported — the platform works for your schedule.',
       earn: {
         title: 'Keep more of every trip',
@@ -126,7 +126,7 @@ export const landingEn = {
       a5: 'Register as a driver, upload your national ID, driving licence and vehicle documents, and get verified. Most applications are processed within 24 hours.',
     },
     ctaTitle: 'Ready for your first ride?',
-    ctaDesc: 'Join TaxiGo today — book in seconds, pay your way, and ride with verified drivers.',
+    ctaDesc: 'Join DRMTaxi today — book in seconds, pay your way, and ride with verified drivers.',
     ctaBookNow: 'Book your first ride',
     ctaDriverJoin: 'Become a driver',
   },

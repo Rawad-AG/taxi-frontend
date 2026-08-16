@@ -1,6 +1,6 @@
 export const ar = {
   common: {
-    appName: 'تاكسي غو',
+    appName: 'DRMTaxi',
     loading: 'جارٍ التحميل…',
     save: 'حفظ',
     saving: 'جارٍ الحفظ…',

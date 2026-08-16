@@ -1,6 +1,6 @@
 export const en = {
   common: {
-    appName: 'TaxiGo',
+    appName: 'DRMTaxi',
     loading: 'Loading…',
     save: 'Save',
     saving: 'Saving…',

@@ -12,7 +12,7 @@ export function Logo({ to = '/' }: { to?: string }) {
         <Car className="h-5 w-5 text-white" />
       </span>
       <span className="text-lg font-extrabold tracking-tight text-slate-900">
-        Taxi<span className="text-brand-600">Go</span>
+        DRM<span className="text-brand-600">Taxi</span>
       </span>
     </Link>
   );
