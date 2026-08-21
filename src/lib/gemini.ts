@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = 'AQ.Ab8RN6JH9rqAWcQ6TsBMNu7P8-fhhX7w3h2Yiwjqou0T7MMJZg';
+const GEMINI_API_KEY = 'AQ.Ab8RN6JxcseFdUnLyiv9X7Z1FjyoCfZTcE07DFlAWmdRr1AyMQ';
 const GEMINI_MODEL = 'gemini-3.6-flash';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
