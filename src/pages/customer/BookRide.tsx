@@ -165,6 +165,15 @@ export default function BookRide() {
     };
   }, [pickup, dropoff, category, activeRide]);
 
+  useEffect(() => {
+    if (paymentMethod === 'bucket' && paymentStatus && (paymentStatus.bucketBalance <= 0 || (!!fare && paymentStatus.bucketBalance < fare.total))) {
+      setPaymentMethod('cash');
+    }
+    if (paymentMethod === 'pay_later' && paymentStatus && (!paymentStatus.payLater.eligible || paymentStatus.payLater.blocked)) {
+      setPaymentMethod('cash');
+    }
+  }, [paymentMethod, paymentStatus, fare]);
+
   const handlePick = useCallback(
     (point: MapPoint) => {
       setError('');

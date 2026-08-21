@@ -3,12 +3,12 @@ import { api } from './api';
 
 export const paymentsApi = {
   async status(): Promise<PaymentStatus> {
-    const { data } = await api.get<{ status: PaymentStatus }>('/payments/status');
-    return data.status;
+    const { data } = await api.get<PaymentStatus>('/payments/status');
+    return data;
   },
 
-  async deposit(amount: number): Promise<{ bucketBalance: number; transaction: BucketTransaction }> {
-    const { data } = await api.post<{ bucketBalance: number; transaction: BucketTransaction }>('/payments/bucket/deposit', { amount });
+  async deposit(amount: number): Promise<{ bucketBalance: number }> {
+    const { data } = await api.post<{ bucketBalance: number }>('/payments/bucket/deposit', { amount });
     return data;
   },
 

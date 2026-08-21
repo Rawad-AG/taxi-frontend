@@ -18,6 +18,8 @@ export const ar = {
     yes: 'نعم',
     no: 'لا',
     delete: 'حذف',
+    copy: 'نسخ',
+    copied: 'تم النسخ',
     today: 'اليوم',
     allTime: 'كل الأوقات',
     online: 'متصل',

@@ -18,6 +18,8 @@ export const en = {
     yes: 'Yes',
     no: 'No',
     delete: 'Delete',
+    copy: 'Copy',
+    copied: 'Copied',
     today: 'Today',
     allTime: 'All time',
     online: 'Online',
