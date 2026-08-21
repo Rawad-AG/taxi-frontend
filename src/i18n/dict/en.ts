@@ -68,6 +68,14 @@ export const en = {
     contact: 'Contact',
     footerTagline: 'Ride with us — Damascus, Aleppo, Homs and beyond.',
   },
+  supportChat: {
+    title: 'DRMTaxi Support',
+    subtitle: 'AI assistant — replies instantly',
+    greeting: "Hi! I'm the DRMTaxi assistant. Ask me anything about booking rides, payments, or becoming a driver.",
+    placeholder: 'Type your message…',
+    send: 'Send',
+    error: 'The assistant is unavailable right now — please try again in a moment.',
+  },
   landing: {
     heroTitle: 'Your ride, your city.',
     heroSubtitle: 'Book a taxi in seconds, track it live and pay your way.',

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import NotificationBell from './NotificationBell';
 import LanguageToggle from './LanguageToggle';
+import SupportChat from './SupportChat';
 
 export function Logo({ to = '/' }: { to?: string }) {
   return (
@@ -158,6 +159,7 @@ export function AppLayout() {
         <Outlet />
       </main>
       <Footer />
+      <SupportChat />
     </div>
   );
 }
