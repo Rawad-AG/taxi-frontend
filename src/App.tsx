@@ -42,6 +42,9 @@ export default function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/how-it-works" element={<StaticPage title={t('static.howItWorks.title')} text={t('static.howItWorks.text')} />} />
             <Route path="/support" element={<StaticPage title={t('static.support.title')} text={t('static.support.text')} />} />
+            <Route path="/privacy" element={<StaticPage title={t('static.privacy.title')} text={t('static.privacy.text')} />} />
+            <Route path="/terms" element={<StaticPage title={t('static.terms.title')} text={t('static.terms.text')} />} />
+            <Route path="/contact" element={<StaticPage title={t('static.contact.title')} text={t('static.contact.text')} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />

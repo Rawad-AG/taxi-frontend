@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { LocateFixed, MapPin, Flag, ArrowUpDown, X, Loader2, Car, Wallet, Clock3, Banknote } from 'lucide-react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { LocateFixed, MapPin, Flag, ArrowUpDown, X, Loader2, Car, Package, Bike, Wallet, Clock3, Banknote } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Alert, Button, Field, Select } from '../../components/ui';
 import MapPicker, { type MapPoint } from '../../components/MapPicker';
@@ -11,7 +11,7 @@ import { paymentsApi } from '../../lib/payments';
 import { getErrorMessage } from '../../lib/api';
 import { fnum } from '../../i18n/format';
 import type { City } from '../../types';
-import type { Ride, RideCategory } from '../../types/ride';
+import type { Ride, RideCategory, RideType } from '../../types/ride';
 import type { PaymentMethod, PaymentStatus } from '../../types/payment';
 
 const CATEGORIES: { key: RideCategory; label: string; note: string }[] = [
@@ -19,6 +19,12 @@ const CATEGORIES: { key: RideCategory; label: string; note: string }[] = [
   { key: 'comfort', label: 'book.cat.comfort', note: 'book.cat.comfortNote' },
   { key: 'luxury', label: 'book.cat.luxury', note: 'book.cat.luxuryNote' },
   { key: 'van', label: 'book.cat.van', note: 'book.cat.vanNote' },
+];
+
+const RIDE_TYPES: { key: RideType; label: string; desc: string; icon: typeof Car }[] = [
+  { key: 'ride', label: 'book.type.ride', desc: 'book.type.rideDesc', icon: Car },
+  { key: 'delivery', label: 'book.type.delivery', desc: 'book.type.deliveryDesc', icon: Package },
+  { key: 'send_item', label: 'book.type.sendItem', desc: 'book.type.sendItemDesc', icon: Bike },
 ];
 
 function WaitingPanel({ ride, onCancel, onRetry }: { ride: Ride; onCancel: () => void; onRetry: () => void }) {
@@ -98,11 +104,14 @@ function WaitingPanel({ ride, onCancel, onRetry }: { ride: Ride; onCancel: () =>
 
 export default function BookRide() {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
+  const queryType = searchParams.get('type');
   const [cities, setCities] = useState<City[]>([]);
   const [cityId, setCityId] = useState('');
   const [pickup, setPickup] = useState<MapPoint | null>(null);
   const [dropoff, setDropoff] = useState<MapPoint | null>(null);
   const [category, setCategory] = useState<RideCategory>('economy');
+  const [type, setType] = useState<RideType>(() => (RIDE_TYPES.some((r) => r.key === queryType) ? (queryType as RideType) : 'ride'));
   const [fare, setFare] = useState<Ride['fare'] | null>(null);
   const [activeRide, setActiveRide] = useState<Ride | null>(null);
   const [error, setError] = useState('');
@@ -116,13 +125,17 @@ export default function BookRide() {
     api.get<{ cities: City[] }>('/lookups/cities').then((res) => {
       if (!active) return;
       setCities(res.data.cities);
+      if (!res.data.cities.length) {
+        setError(t('book.noCities'));
+        return;
+      }
       const damascus = res.data.cities.find((c) => c.name === 'Damascus');
       setCityId(damascus?._id ?? res.data.cities[0]?._id ?? '');
     });
     return () => {
       active = false;
     };
-  }, []);
+  }, [t]);
 
   const city = useMemo(() => cities.find((c) => c._id === cityId), [cities, cityId]);
   const center = useMemo(
@@ -185,11 +198,14 @@ export default function BookRide() {
   };
 
   const requestRide = async () => {
-    if (!pickup || !dropoff || !cityId) return;
+    if (!pickup || !dropoff || !cityId) {
+      setError(t('book.missingDetails'));
+      return;
+    }
     setError('');
     setRequesting(true);
     try {
-      const { ride } = await rideApi.create({ city: cityId, category, pickup, dropoff, paymentMethod });
+      const { ride } = await rideApi.create({ city: cityId, category, type, pickup, dropoff, paymentMethod });
       setActiveRide(ride);
     } catch (err) {
       setError(getErrorMessage(err));
@@ -306,6 +322,25 @@ export default function BookRide() {
               </div>
             </div>
 
+            <div className="mt-4">
+              <p className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-400">{t('book.rideType')}</p>
+              <div className="grid grid-cols-3 gap-2">
+                {RIDE_TYPES.map((r) => (
+                  <button
+                    key={r.key}
+                    onClick={() => setType(r.key)}
+                    title={t(r.desc)}
+                    className={`flex flex-col items-center gap-1 rounded-xl border px-2 py-3 text-xs font-bold transition ${
+                      type === r.key ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-brand-300'
+                    }`}
+                  >
+                    <r.icon className="h-4 w-4" />
+                    {t(r.label)}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="mt-4 grid grid-cols-4 gap-2">
               {CATEGORIES.map((c) => (
                 <button
@@ -395,7 +430,7 @@ export default function BookRide() {
             </div>
 
             {!activeRide ? (
-              <Button className="mt-4" fullWidth loading={requesting} disabled={!pickup || !dropoff} onClick={requestRide}>
+              <Button className="mt-4" fullWidth loading={requesting} disabled={!pickup || !dropoff || !cityId} onClick={requestRide}>
                 <Flag className="h-4 w-4" /> {t('book.requestRide')}
               </Button>
             ) : (

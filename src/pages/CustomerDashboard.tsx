@@ -24,24 +24,18 @@ export default function CustomerDashboard() {
       titleKey: 'customer.services.taxi.title',
       descKey: 'customer.services.taxi.desc',
       to: '/book',
-      badgeKey: null,
-      disabled: false,
     },
     {
       icon: Package,
       titleKey: 'customer.services.delivery.title',
       descKey: 'customer.services.delivery.desc',
-      to: '#',
-      badgeKey: 'customer.comingSoon',
-      disabled: true,
+      to: '/book?type=delivery',
     },
     {
       icon: Bike,
       titleKey: 'customer.services.item.title',
       descKey: 'customer.services.item.desc',
-      to: '#',
-      badgeKey: 'customer.comingSoon',
-      disabled: true,
+      to: '/book?type=send_item',
     },
   ];
 
@@ -67,25 +61,17 @@ export default function CustomerDashboard() {
           <Link
             key={s.titleKey}
             to={s.to}
-            aria-disabled={s.disabled}
-            className={`group relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300 hover:shadow-lg hover:shadow-brand-900/5 ${
-              s.disabled ? 'pointer-events-none' : ''
-            }`}
+            className="group relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300 hover:shadow-lg hover:shadow-brand-900/5"
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50">
               <s.icon className="h-6 w-6 text-brand-600" />
             </div>
             <div className="flex items-center gap-2">
               <h2 className="text-lg font-bold text-slate-900">{t(s.titleKey)}</h2>
-              {s.badgeKey && (
-                <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-700">
-                  {t(s.badgeKey)}
-                </span>
-              )}
             </div>
             <p className="mt-1.5 text-sm text-slate-500">{t(s.descKey)}</p>
             <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-brand-600 opacity-0 transition group-hover:opacity-100">
-              {s.disabled ? t('customer.soon') : t('customer.bookNow')} <ChevronRight className="h-4 w-4" />
+              {t('customer.bookNow')} <ChevronRight className="h-4 w-4" />
             </div>
           </Link>
         ))}

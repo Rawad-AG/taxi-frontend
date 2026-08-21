@@ -21,6 +21,27 @@ export interface DriverProfile {
   car: CarInfo | null;
 }
 
+export interface SavedPlace {
+  _id: string;
+  name: string;
+  label?: string;
+  lat: number;
+  lng: number;
+}
+
+export interface SavedRoutePoint {
+  label?: string;
+  lat: number;
+  lng: number;
+}
+
+export interface SavedRoute {
+  _id: string;
+  name: string;
+  pickup: SavedRoutePoint;
+  dropoff: SavedRoutePoint;
+}
+
 export interface User {
   id: string;
   role: UserRole;
@@ -28,6 +49,11 @@ export interface User {
   status: 'active' | 'pending' | 'suspended';
   firstName?: string;
   lastName?: string;
+  avatar?: string | null;
+  twoFactorEnabled?: boolean;
+  savedPlaces?: SavedPlace[];
+  savedRoutes?: SavedRoute[];
+  bucketBalance?: number;
   driverProfile?: DriverProfile | null;
   createdAt: string;
 }

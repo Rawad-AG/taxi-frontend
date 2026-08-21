@@ -1,4 +1,4 @@
-import type { DriverStats, Ride, RideCategory, RideLiveLoc } from '../types/ride';
+import type { DriverStats, Ride, RideCategory, RideLiveLoc, RideType } from '../types/ride';
 import type { PaymentMethod } from '../types/payment';
 import { api } from './api';
 
@@ -14,7 +14,7 @@ export const rideApi = {
     return data.fare;
   },
 
-  async create(input: { city: string; category: RideCategory; pickup: MapPoint; dropoff: MapPoint; paymentMethod?: PaymentMethod }) {
+  async create(input: { city: string; category: RideCategory; type?: RideType; pickup: MapPoint; dropoff: MapPoint; paymentMethod?: PaymentMethod }) {
     const { data } = await api.post<{ ride: Ride; targetedDrivers: number }>('/rides', input);
     return data;
   },

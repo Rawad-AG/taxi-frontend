@@ -1,5 +1,6 @@
 export type RideStatus = 'requested' | 'accepted' | 'arrived' | 'in_progress' | 'completed' | 'cancelled';
 export type RideCategory = 'economy' | 'comfort' | 'luxury' | 'van';
+export type RideType = 'ride' | 'delivery' | 'send_item';
 
 export interface RidePoint {
   label?: string;
@@ -46,7 +47,7 @@ export interface RideLiveLoc {
 export interface Ride {
   id: string;
   status: RideStatus;
-  type: 'ride' | 'delivery' | 'send_item';
+  type: RideType;
   category: RideCategory;
   city: string;
   pickup: RidePoint & { area?: string };

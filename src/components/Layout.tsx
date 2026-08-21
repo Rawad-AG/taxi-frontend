@@ -52,7 +52,7 @@ export function Navbar() {
             </>
           )}
           {user?.role === 'customer' && (
-            <NavLink to="/customer" className={navLinkClass}>
+            <NavLink to="/book" className={navLinkClass}>
               {t('nav.bookRide')}
             </NavLink>
           )}
@@ -135,15 +135,15 @@ export function Footer() {
         <Logo />
         <p>{t('nav.footerTagline')}</p>
         <div className="flex items-center gap-4">
-          <a href="#" className="hover:text-brand-700">
+          <Link to="/privacy" className="hover:text-brand-700">
             {t('nav.privacy')}
-          </a>
-          <a href="#" className="hover:text-brand-700">
+          </Link>
+          <Link to="/terms" className="hover:text-brand-700">
             {t('nav.terms')}
-          </a>
-          <a href="#" className="hover:text-brand-700">
+          </Link>
+          <Link to="/contact" className="hover:text-brand-700">
             {t('nav.contact')}
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

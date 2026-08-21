@@ -306,7 +306,9 @@ export default function TrackRide() {
               <span className="text-lg font-extrabold text-brand-700">{t('track.fare', { amount: fnum(ride.fare.total) })}</span>
             </div>
             <div className="mt-2 flex items-center justify-between text-xs text-slate-400">
-              <span>{t(`book.cat.${ride.category}`)}</span>
+              <span>
+                {t(`book.type.${ride.type}`)} · {t(`book.cat.${ride.category}`)}
+              </span>
               <span>{t('track.distanceKm', { km: ride.fare.roadDistanceKm.toFixed(1) })} · {t('pay.method.cash')}</span>
             </div>
           </div>

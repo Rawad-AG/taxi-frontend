@@ -17,6 +17,7 @@ export const en = {
     notAvailable: '—',
     yes: 'Yes',
     no: 'No',
+    delete: 'Delete',
     today: 'Today',
     allTime: 'All time',
     online: 'Online',

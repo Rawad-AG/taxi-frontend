@@ -17,6 +17,7 @@ export const ar = {
     notAvailable: '—',
     yes: 'نعم',
     no: 'لا',
+    delete: 'حذف',
     today: 'اليوم',
     allTime: 'كل الأوقات',
     online: 'متصل',

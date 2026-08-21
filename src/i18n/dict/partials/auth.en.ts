@@ -207,5 +207,17 @@ export default {
       title: 'Support',
       text: 'Call us 24/7 at 944 444 444 or visit our offices in Damascus. A full help center is coming soon.',
     },
+    privacy: {
+      title: 'Privacy Policy',
+      text: 'DRMTaxi is committed to protecting your privacy. This policy explains what we collect and how we use it.\n\n1. What we collect — To provide the service we store your phone number, name, trip history, location during active rides, and payment records. Driver accounts additionally store license and vehicle details.\n\n2. How we use it — Your data is used only to operate the service: matching you with drivers, processing payments, resolving disputes, and providing support. We never sell your data.\n\n3. Location — Your location is used while a ride is active so the driver can reach you. Location history is not sold or shared.\n\n4. Sharing — We share your details with your driver or passenger only as needed to complete a trip. We disclose data to authorities only when required by law.\n\n5. Your rights — You may request a copy or deletion of your data at any time by contacting support. Deletion may affect your account balance or outstanding pay-later debt.\n\n6. Security — Passwords are hashed, connections are encrypted, and access to your data is limited to staff who need it.',
+    },
+    terms: {
+      title: 'Terms of Service',
+      text: 'These terms govern your use of DRMTaxi.\n\n1. The service — DRMTaxi is a ride-hailing prototype connecting passengers with independent drivers. We do not provide transportation ourselves.\n\n2. Accounts — You must keep your account details accurate and secure. You are responsible for all activity under your account.\n\n3. Fares — The fare shown before confirming a ride is final. You agree to pay the fare by the selected method: cash, bucket balance, or pay-later credit.\n\n4. Cancellations — You may cancel a ride before pickup. Repeated no-shows or cancellations may restrict your account.\n\n5. Conduct — Harassment, damage to vehicles, or misuse of the SOS button may lead to suspension.\n\n6. Liability — We make every effort to keep the service reliable, but we are not liable for indirect losses or for issues outside our control such as traffic or road conditions.\n\n7. Changes — We may update these terms. Continued use after an update means you accept the new terms.',
+    },
+    contact: {
+      title: 'Contact Us',
+      text: 'We are here to help.\n\nPhone: 944 444 444 (24/7)\nEmail: support@drmtaxi.sy\nOffices: Damascus, Baramkeh — main street, building 12.\n\nFor emergencies during a ride, use the in-app SOS button — it connects you to our emergency team and shares your live location.',
+    },
   },
 };
